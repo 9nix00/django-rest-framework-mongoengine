@@ -12,8 +12,16 @@ from collections import OrderedDict
 from rest_framework import serializers
 from rest_framework import fields as drf_fields
 from rest_framework_mongoengine.utils import get_field_info
-from rest_framework_mongoengine.fields import (ReferenceField, ListField, EmbeddedDocumentField, DynamicField,
-                                               ObjectIdField, DocumentField, BinaryField, BaseGeoField)
+from rest_framework_mongoengine.fields import \
+    ReferenceField, \
+    ListField, \
+    EmbeddedDocumentField, \
+    DynamicField,\
+    ObjectIdField, \
+    DocumentField, \
+    BinaryField, \
+    BaseGeoField
+
 import copy
 
 
@@ -136,7 +144,8 @@ class DocumentSerializer(serializers.ModelSerializer):
         me_fields.FileField: drf_fields.FileField,
         me_fields.ImageField: drf_fields.ImageField,
         me_fields.UUIDField: drf_fields.CharField,
-        me_fields.DecimalField: drf_fields.DecimalField
+        me_fields.DecimalField: drf_fields.DecimalField,
+        me_fields.SequenceField: drf_fields.IntegerField,
     }
 
     _drfme_field_mapping = {
@@ -314,6 +323,10 @@ class DocumentSerializer(serializers.ModelSerializer):
 
         for field_name, field in hidden_fields.items():
             ret[field_name] = field
+
+        for field_exclude in exclude:
+            if field_exclude in ret:
+                del ret[field_exclude]
 
         return ret
 
