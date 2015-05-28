@@ -134,6 +134,7 @@ class DocumentSerializer(serializers.ModelSerializer):
 
     MAX_RECURSION_DEPTH = 5  # default value of depth
     field_mapping = {
+        me_fields.LongField: drf_fields.IntegerField,
         me_fields.FloatField: drf_fields.FloatField,
         me_fields.IntField: drf_fields.IntegerField,
         me_fields.DateTimeField: drf_fields.DateTimeField,
