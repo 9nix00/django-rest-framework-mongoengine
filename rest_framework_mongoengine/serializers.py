@@ -323,9 +323,10 @@ class DocumentSerializer(serializers.ModelSerializer):
         for field_name, field in hidden_fields.items():
             ret[field_name] = field
 
-        for field_exclude in exclude:
-            if field_exclude in ret:
-                del ret[field_exclude]
+        if exclude is not None:
+            for field_exclude in exclude:
+                if field_exclude in ret:
+                    del ret[field_exclude]
 
         return ret
 
