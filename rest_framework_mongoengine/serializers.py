@@ -498,12 +498,16 @@ class EmbeddedDocumentSerializer(DocumentSerializer):
         """
         raise_errors_on_nested_writes('update', self, validated_data)
 
+        if instance is None:
+            model = getattr(self.Meta, 'model')
+            instance = model()
+
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
 
         return instance
 
-    def _get_default_field_names(self, declared_fields, model_info):
+    def get_default_field_names(self, declared_fields, model_info):
         """
         EmbeddedDocuments don't have `id`s so do not include `id` to field names
         """
