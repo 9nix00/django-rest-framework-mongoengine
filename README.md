@@ -9,7 +9,7 @@ the base version forked from [tweiand-10m2](https://github.com/tweiand-10m2/djan
 he fix some bug but not merge into official code.
 
 ## Installation
-`pip install django-rest-framework-mongoengine3`
+`pip install django-rest-framework-mongoengine-hack`
 
 
 Don't forget to add the package to installed apps.
