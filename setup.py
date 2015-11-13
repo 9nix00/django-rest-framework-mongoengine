@@ -14,7 +14,7 @@ setup(
     author_email='wangwenpei@nextoa.com',
     requires=[
         'mongoengine',
-        'djangorestframework>=3.1.0'
+        'djangorestframework'
     ],
     classifiers=['Development Status :: 5 - Production/Stable',
                  'License :: OSI Approved :: MIT License',

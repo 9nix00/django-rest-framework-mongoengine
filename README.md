@@ -1,45 +1,15 @@
 Django Rest Framework Mongoengine
-===============================
+==============================================================
 
-***Mongoengine*** support for ***Django Rest Framework***.
 
-# DRF 3
-Starting from `version 2.0`, this package will be developed using `DRF 3.0` and higher. 
+This is a hack for django-rest-framework-mongoengine
 
-# DRF 2
-If you want to use `DRFME` with `DRF 2`, you should `version 1.*`. Development will be continued on `drf_2_support` branch.
+the base version forked from [tweiand-10m2](https://github.com/tweiand-10m2/django-rest-framework-mongoengine).
 
-## Documentation
-See full documentation [here](https://pythonhosted.org/django-rest-framework-mongoengine/)
-### DocumentSerializer
-`DocumentSerializer` works just like as `DRF Model Serializer`. Your model fields are converted to relevant serializer fields automatically. If you want custom behavior, you can use `nested serializers`.
-```Python
-from rest_framework_mongoengine.serializers import DocumentSerializer
-
-class BlogSerializer(DocumentSerializer):
-    class Meta:
-        model = Blog
-        fields = ('id', 'author', 'name', 'date_created')
-```
-### DynamicDocumentSerializer
-A `DocumentSerializer` for dynamic documents.
-### EmbeddedDocumentSerializer
-`EmbeddedDocumentSerializer` is used to customize `EmbeddedDocument` behavior, and make `validations` accurately. It is mentioned extensively on the [documentation](https://pythonhosted.org/django-rest-framework-mongoengine/serializers/#embeddeddocumentserializer)
-### Generic Views
-`Generic Views` are named exactly the same as `DRF Generic Views`. 
-
-Just make sure you are using `DRFME Generics`.
-
-`from rest_framework_mongoengine import generics`
+he fix some bug but not merge into official code.
 
 ## Installation
-`pip install django-rest-framework-mongoengine`
-
-**Note:** You might consider using a specific version.
-
-***For clarity:***
-- DRF2 support: `pip install "django-rest-framework-mongoengine<2.0"`
-- DRF3 support: `pip install "django-rest-framework-mongoengine>=2.0"`
+`pip install django-rest-framework-mongoengine3`
 
 
 Don't forget to add the package to installed apps.
@@ -49,3 +19,17 @@ INSTALLED_APPS = (
     'rest_framework_mongoengine',
 )
 ```
+
+
+## Change Note
+
+version 1.0
+
+* change OrderedDict import path to support newer drf
+* make EmbeddedDocumentSerializer work
+* support for mongoengine 0.9+
+* fix error when exclude is not in DocumentSerializer
+* add LongField support
+
+
+
