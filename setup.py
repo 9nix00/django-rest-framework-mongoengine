@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='django-rest-framework-mongoengine3',
+    name='django-rest-framework-mongoengine-hack',
     version='1.0.0',
     description='Hack for django-rest-framework-mongoengine to support newer mongoengine and drf',
     packages=['rest_framework_mongoengine', ],
