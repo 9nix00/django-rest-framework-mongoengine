@@ -1,17 +1,17 @@
 from distutils.core import setup
 
 setup(
-    name='django-rest-framework-mongoengine',
-    version='2.1.0',
-    description='MongoEngine support for Django Rest Framework.',
-    packages=['rest_framework_mongoengine',],
-    license='see https://github.com/umutbozkurt/django-rest-framework-mongoengine/blob/master/LICENSE',
-    long_description='see https://github.com/umutbozkurt/django-rest-framework-mongoengine/blob/master/README.md',
-    url='https://github.com/umutbozkurt/django-rest-framework-mongoengine',
-    download_url='https://github.com/umutbozkurt/django-rest-framework-mongoengine/releases/',
+    name='django-rest-framework-mongoengine3',
+    version='1.0.0',
+    description='Hack for django-rest-framework-mongoengine to support newer mongoengine and drf',
+    packages=['rest_framework_mongoengine', ],
+    license='see https://github.com/9nix00/django-rest-framework-mongoengine/blob/master/LICENSE',
+    long_description='see https://github.com/9nix00/django-rest-framework-mongoengine/blob/master/README.md',
+    url='https://github.com/9nix00/django-rest-framework-mongoengine',
+    download_url='https://github.com/9nix00/django-rest-framework-mongoengine/releases/',
     keywords=['mongoengine', 'serializer', 'django rest framework'],
-    author='Umut Bozkurt',
-    author_email='umutbozkurt92@gmail.com',
+    author='WANG WENPEI',
+    author_email='wangwenpei@nextoa.com',
     requires=[
         'mongoengine',
         'djangorestframework>=3.1.0'
